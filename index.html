@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>SF Interest Form</title>
-    <link href="styles.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
@@ -21,18 +21,20 @@
       </div>
 
       <!-- NEW ORG: 00Dg5000000LKMl -->
-      <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dg5000000LKMl" method="POST" class="lead-form">
+      <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dg5000000LKMl"
+            method="POST" class="lead-form">
+
         <!-- Required Salesforce hidden fields -->
         <input type="hidden" name="oid" value="00Dg5000000LKMl">
         <input type="hidden" name="retURL" value="https://salesforce-adamz.github.io/webtoleadform/thank-you.html">
 
         <!-- Helpful defaults -->
         <input type="hidden" name="lead_source" value="Web">
-        <input type="hidden" name="assign" value="1"> <!-- runs active Lead Assignment Rule -->
-        <input type="hidden" name="company" value="Individual"> <!-- Lead requires Company -->
-        <input type="hidden" name="country_code" value="US">     <!-- ensures state_code validates -->
+        <input type="hidden" name="assign" value="1">        <!-- run active Lead Assignment Rule -->
+        <input type="hidden" name="company" value="Individual"> <!-- Salesforce requires Company -->
+        <input type="hidden" name="country_code" value="US">  <!-- so state_code validates -->
 
-        <!-- Debug (leave for ONE test submit, then remove) -->
+        <!-- TEMP: Debug one time, then remove these two lines -->
         <input type="hidden" name="debug" value="1">
         <input type="hidden" name="debugEmail" value="salesforce.adamz@gmail.com">
 
@@ -75,7 +77,7 @@
           <option value="WV">WV</option><option value="WI">WI</option><option value="WY">WY</option>
         </select>
 
-        <!-- If Web-to-Lead reCAPTCHA is enabled in Setup, include the widget:
+        <!-- If Web-to-Lead reCAPTCHA is enabled in Salesforce, include this block:
         <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY_HERE"></div>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         -->
