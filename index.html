@@ -5,80 +5,81 @@
     <title>SF Interest Form</title>
     <link href="styles.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Thanos, JavaScript, Paradoy, Netlify Drop">
   </head>
+
   <body>
-    <body>
-      <div class="titan-background">
-        <span class="stars stars-L"></span>
-        <span class="stars stars-M"></span>
-        <span class="stars stars-S"></span>
+    <div class="titan-background">
+      <span class="stars stars-L"></span>
+      <span class="stars stars-M"></span>
+      <span class="stars stars-S"></span>
+    </div>
+
+    <div class="marvellous-container">
+      <div class="header">
+        <h1><span class="title-marvel">Interest</span> <span class="title-studios">Form</span></h1>
+        <h2>Fill out this form and one of our account executives <br />will reach out to you as soon as possible.</h2>
       </div>
-    
-      <div class="marvellous-container">
-        <div class="header">
-          <h1><span class="title-marvel">Interest</span> <span class="title-studios">Form</span></h1>
-          <h2>Fill out this form and one of our agents <br />will reach out to you as soon as possible.</h2>
-        </div>
-    
-        <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dak00000QETch" method="POST" class="lead-form">
-          <input type="hidden" name="lead_source" value="Web">
-          <input type="hidden" name="oid" value="00Dak00000QETch">
-          <input type="hidden" name="retURL" value="https://salesforce-adamz.github.io/webtoleadform/thank-you.html">
-          <input type="hidden" name="assign" value="1">
-    
-          <label for="first_name">First Name</label>
-          <input id="first_name" name="first_name" type="text" required>
-    
-          <label for="last_name">Last Name</label>
-          <input id="last_name" name="last_name" type="text" required>
-    
-          <label for="phone">Phone</label>
-          <input id="phone" name="phone" type="text">
-    
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required>
-    
-          <label for="00Nak00000Y9D2T">Lead Type</label>
-          <select id="00Nak00000Y9D2T" name="00Nak00000Y9D2T">
-            <option value="">--None--</option>
-            <option value="Buyer">Buyer</option>
-            <option value="Seller">Seller</option>
-            <option value="Investor">Investor</option>
-          </select>
-    
-          <label for="00Nak00000Y8nEt">Interested Location</label>
-          <input id="00Nak00000Y8nEt" name="00Nak00000Y8nEt" type="text">
-    
-          <label for="00Nak00000Y9D8v">Estimated Budget Range</label>
-          <select id="00Nak00000Y9D8v" name="00Nak00000Y9D8v">
-            <option value="">--None--</option>
-            <option value="$0-$50,000">$0-$50,000</option>
-            <option value="$50,001-$100,000">$50,001-$100,000</option>
-            <option value="$100,001 - $150,000">$100,001 - $150,000</option>
-            <option value="$150,001-$200,000">$150,001-$200,000</option>
-            <option value="$200,001-$250,000">$200,001-$250,000</option>
-            <option value="$250,001-$300,000">$250,001-$300,000</option>
-            <option value="$300,001-$350,000">$300,001-$350,000</option>
-            <option value="$350,001-$400,000">$350,001-$400,000</option>
-            <option value="$400,001-$500,000">$400,001-$500,000</option>
-            <option value="$500,001-$750,000">$500,001-$750,000</option>
-            <option value="$750,001-$1,000,000">$750,001-$1,000,000</option>
-            <option value="$1,000,001+">$1,000,001+</option>
-          </select>
-    
-          <label for="00Nak00000Y9DFN">Timeframe to Buy/Sell</label>
-          <select id="00Nak00000Y9DFN" name="00Nak00000Y9DFN">
-            <option value="">--None--</option>
-            <option value="0-3 Months">0-3 Months</option>
-            <option value="3-6 Months">3-6 Months</option>
-            <option value="6-12 Months">6-12 Months</option>
-            <option value="12+ Months">12+ Months</option>
-          </select>
-    
-          <input type="submit" value="Submit Form" class="submit-btn">
-        </form>    
-      </div>
-    </body>
-    
+
+      <!-- POINTS TO THE ORG -->
+      <form
+        action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dg5000000LKMl"
+        method="POST"
+        class="lead-form"
+      >
+        <!-- Required Salesforce fields -->
+        <input type="hidden" name="oid" value="00Dg5000000LKMl">
+        <input type="hidden" name="retURL" value="https://salesforce-adamz.github.io/webtoleadform/thank-you.html">
+
+        <!-- Helpful extras -->
+        <input type="hidden" name="lead_source" value="Web">
+        <input type="hidden" name="assign" value="1"> <!-- runs active Lead Assignment Rule -->
+
+        <!-- Standard fields -->
+        <label for="first_name">First Name</label>
+        <input id="first_name" name="first_name" type="text" maxlength="40" required>
+
+        <label for="last_name">Last Name</label>
+        <input id="last_name" name="last_name" type="text" maxlength="80" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" maxlength="80" required>
+
+        <label for="phone">Phone</label>
+        <input id="phone" name="phone" type="tel" maxlength="40">
+
+        <label for="company">Company</label>
+        <input id="company" name="company" type="text" maxlength="40">
+
+        <label for="street">Street</label>
+        <textarea id="street" name="street" rows="2"></textarea>
+
+        <label for="city">City</label>
+        <input id="city" name="city" type="text" maxlength="40">
+
+        <label for="state_code">State</label>
+        <select id="state_code" name="state_code">
+          <option value="">--Select--</option>
+          <option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option>
+          <option value="AR">AR</option><option value="CA">CA</option><option value="CO">CO</option>
+          <option value="CT">CT</option><option value="DE">DE</option><option value="DC">DC</option>
+          <option value="FL">FL</option><option value="GA">GA</option><option value="HI">HI</option>
+          <option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option>
+          <option value="IA">IA</option><option value="KS">KS</option><option value="KY">KY</option>
+          <option value="LA">LA</option><option value="ME">ME</option><option value="MD">MD</option>
+          <option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option>
+          <option value="MS">MS</option><option value="MO">MO</option><option value="MT">MT</option>
+          <option value="NE">NE</option><option value="NV">NV</option><option value="NH">NH</option>
+          <option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option>
+          <option value="NC">NC</option><option value="ND">ND</option><option value="OH">OH</option>
+          <option value="OK">OK</option><option value="OR">OR</option><option value="PA">PA</option>
+          <option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option>
+          <option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option>
+          <option value="VT">VT</option><option value="VA">VA</option><option value="WA">WA</option>
+          <option value="WV">WV</option><option value="WI">WI</option><option value="WY">WY</option>
+        </select>
+
+        <input type="submit" value="Submit Form" class="submit-btn">
+      </form>
+    </div>
+  </body>
 </html>
